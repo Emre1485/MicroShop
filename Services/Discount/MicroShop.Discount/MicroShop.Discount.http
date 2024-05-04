@@ -1,0 +1,6 @@
+@MicroShop.Discount_HostAddress = http://localhost:5278
+
+GET {{MicroShop.Discount_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
