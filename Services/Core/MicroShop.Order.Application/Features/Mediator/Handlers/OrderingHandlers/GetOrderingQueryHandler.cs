@@ -14,6 +14,12 @@ namespace MicroShop.Order.Application.Features.Mediator.Handlers.OrderingHandler
     public class GetOrderingQueryHandler : IRequestHandler<GetOrderingQuery, List<GetOrderingQueryResult>>
     {
         private readonly IRepository<Ordering> _repository;
+
+        public GetOrderingQueryHandler(IRepository<Ordering> repository)
+        {
+            _repository = repository;
+        }
+
         public async Task<List<GetOrderingQueryResult>> Handle(GetOrderingQuery request, CancellationToken cancellationToken)
         {
             var values = await _repository.GetAllAsync();

@@ -2,9 +2,12 @@ using MicroShop.Order.Application.Features.CQRS.Handlers.AddressHandlers;
 using MicroShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers;
 using MicroShop.Order.Application.Interfaces;
 using MicroShop.Order.Application.Services;
+using MicroShop.Order.Persistence.Context;
 using MicroShop.Order.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<OrderContext>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 

@@ -31,7 +31,7 @@ namespace MicroShop.Order.WebAPI.Controllers
             return Ok(value);
         }
 
-        [HttpPut]
+        [HttpPost]
         public async Task<IActionResult> CreateOrdering(CreateOrderingCommand command)
         {
             await _mediator.Send(command);
