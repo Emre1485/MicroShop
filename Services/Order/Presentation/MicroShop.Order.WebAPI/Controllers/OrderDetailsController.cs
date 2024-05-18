@@ -1,11 +1,13 @@
 ﻿using MicroShop.Order.Application.Features.CQRS.Commands.OrderDetailCommands;
 using MicroShop.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers;
 using MicroShop.Order.Application.Features.CQRS.Queries.OrderDetailQueries;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MicroShop.Order.WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class OrderDetailsController : ControllerBase
